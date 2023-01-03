@@ -1,7 +1,11 @@
 ---
 title: 2_basic_structure
 date: 2023-01-03 11:40:18
-tags: 大二上, 离散数学
+tags: 
+	- 大二上
+	- 离散数学
+categories: 离散数学
+description: 离散数学第二章笔记
 ---
 
 
@@ -9,7 +13,7 @@ tags: 大二上, 离散数学
 
 # Sets 集合
 
-![01](/images/2-basic-structure/01.png)
+![01](../images/2-basic-structure/01.png)
 
 ![logo](2-basic-structure/01.png)
 
