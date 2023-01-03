@@ -9,7 +9,7 @@ tags: 大二上, 离散数学
 
 # Sets 集合
 
-![01](../images/2-basic-structure/01.png)
+![01](/images/2-basic-structure/01.png)
 
 ![logo](2-basic-structure/01.png)
 
