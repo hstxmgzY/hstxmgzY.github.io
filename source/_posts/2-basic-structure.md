@@ -5,34 +5,34 @@ tags:
 	- 大二上
 	- 离散数学
 categories: 离散数学
+url: 本文参考：
 description: 离散数学第二章笔记
 ---
 
+
+
+本文参考[浙大计院的NC的离散数学详解 Discrete Mathematics Explained in DetailJ](https://github.com/iamNCJ/Discrete_Mathematics_Explained_in_Detail)，仅用于复习巩固
 
 <font size=6> Chapter 02 Basic Structures 基本结构</font>
 
 # Sets 集合
 
-![01](../images/2-basic-structure/01.png)
-
-![logo](2-basic-structure/01.png)
-
-
+[![pSizo8A.png](https://s1.ax1x.com/2023/01/04/pSizo8A.png)](https://imgse.com/i/pSizo8A)
 
 ## Definition 定义
 
-+  A set is an ==**unordered**== collection of **distinct** objects.
++  A set is an **unordered** collection of **distinct** objects.
 + The objects in a set are called the **elements**（元素）, or **members**（成员）, of the set. 
   + A set is said to contain its elements. 
   + a ∈ A, a is an element of the set A, a$\notin$A, a is not an element of the set A.
 >Note:
->+ N = {0,1,2,3,···},the set of all natural numbers 自然数
-+ Z = {··· ,−2,−1,0,1,2,···},the set of all integers     整数
-+ $Z^+$ = {1,2,3,···},the set of all positive integers    正整数
-+ Q = {p/q|p ∈ Z,q ∈ Z,q$\ne$ 0}, the set of all rational numbers R, the set of all real numbers.   有理数
-+ R^+^, the set of all positive real numbers            实数
-+ C, the set of all complex numbers                    复数
->+ ∅, empty set 
+>+ $N = \{0,1,2,3,···\}$,the set of all natural numbers 自然数集
+>+ $Z = \{··· ,−2,−1,0,1,2,···\}$,the set of all integers     整数集
+>+ $Z^+ = \{1,2,3,···\}$,the set of all positive integers    正整数集
+>+ $Q = \{p/q|p ∈ Z,q ∈ Z,q\ne 0\}$, the set of all rational numbers R, the set of all real numbers.   有理数集
+>+ $R^+$, the set of all positive real numbers            实数集
+>+ $C$, the set of all complex numbers                    复数集
+>+ $\phi$, empty set  空集
 
 
 
@@ -67,7 +67,7 @@ $$
 A=B \Leftrightarrow \forall x[(x\in A\to x\in B)\wedge(x\in B\to x\in A)]\Leftrightarrow(A\subseteq B)\wedge(B\subseteq A)
 $$
 
-> To show that two sets A and B are equal, show that A ⊆ B and B ⊆ A.
+> **To show that two sets A and B are equal, show that A ⊆ B and B ⊆ A.**
 
 
 
@@ -94,18 +94,18 @@ e.g. Let A be the set of odd positive integers less than 10. Then |A| = 5.
 
 > Note:
 >
-> 1. |S|=n implies |P(S)| = $$2^n$$
+> 1. |S|=n implies |P(S)| = $2^n$
 > 2. S is finite and so is P(S)
 > 3. $$x\in P(S)\Rightarrow x\in S（此处x是一个集合）\\x\in S\Rightarrow\{x\}\in P(S)（此处x是一个元素）\\S\in P(S)$$
 
-**Important!!**e.g.
+**Important!!** e.g.
 
 > + What is the power set of the empty set? What is the power set of the set {∅}?
 >
 > The empty set has exactly one subset, namely, itself. Consequently,P(∅) = {∅}.
 >The set {∅} has exactly two subsets, namely, ∅ and the set {∅} itself. Therefore,P({∅}) = {∅, {∅}}.
 > 
-> ***A good way to check is to make sure |P(S)| = $$2^n$$***
+> ***A good way to check is to make sure |P(S)| = $2^n$***
 
 
 
@@ -117,9 +117,9 @@ e.g. Let A be the set of odd positive integers less than 10. Then |A| = 5.
 
 In particular, **ordered 2-tuples** are called **ordered pairs**（序偶）
 
-> $$(x,y)=(u,v)\Rightarrow(x=u)\wedge(y=u)$$
+> $(x,y)=(u,v)\Rightarrow(x=u)\wedge(y=u)$
 >
-> If $$x\ne y$$, then $$(x,y)\ne(y,x)$$
+> If $x\ne y$, then $(x,y)\ne(y,x)$
 
 The Cartesian product of A and B, denoted by A × B, is the set of all ordered pairs (a, b), where a ∈ A and b ∈ B. 
 
@@ -133,11 +133,11 @@ $$
 
 > **Note**:
 >
-> If |A|=m, |B|=n, then |A×B|=|B×A|=mn
+> If $|A|=m, |B|=n, then |A×B|=|B×A|=mn$
 >
-> A×B≠B×A
+> $A×B≠B×A$
 >
-> A×∅ = ∅×A = ∅
+> $A×∅ = ∅×A = ∅$
 
 
 
@@ -149,9 +149,9 @@ $$
 
 $$A\cap B=\{x|x\in A\wedge x\in B\}$$
 
-![02](/images/2-basic-structure/02.png)
+[![pSiz7vt.png](https://s1.ax1x.com/2023/01/04/pSiz7vt.png)](https://imgse.com/i/pSiz7vt)
 
-> Two sets are called *disjoint* if their intersection is the empty set, namely $$A\cap B = \empty$$
+> Two sets are called *disjoint* if their intersection is the empty set, namely $A\cap B = \empty$
 
 #### *Generalized Intersections 拓展的交集
 
@@ -161,7 +161,7 @@ $$A_1\cap A_2\cap...\cap A_n=\bigcap_{i=1}^{n}A_i$$
 
 $$A\cup B=\{x|x\in A\vee x\in B\}$$
 
-![03](/images/2-basic-structure/03.png)
+[![pSizqDf.png](https://s1.ax1x.com/2023/01/04/pSizqDf.png)](https://imgse.com/i/pSizqDf)
 
 > The cardinality of the union of two finite sets:
 >
@@ -175,7 +175,7 @@ $$A_1\cup A_2\cup...\cup A_n=\bigcup_{i=1}^{n}A_i$$
 
 $$A-B=\{x|x\in A\wedge x\notin B\}$$
 
-![04](/images/2-basic-structure/04.png)
+[![pSizbKP.png](https://s1.ax1x.com/2023/01/04/pSizbKP.png)](https://imgse.com/i/pSizbKP)
 
 ### Complement 补集
 
@@ -183,7 +183,7 @@ $$\overline{A} = {x\in U | x\notin A}$$
 
 (U is the universal set)
 
-![05](/images/2-basic-structure/05.png)
+[![pSizTgI.png](https://s1.ax1x.com/2023/01/04/pSizTgI.png)](https://imgse.com/i/pSizTgI)
 
 > （重要）**Note**:
 >
@@ -196,6 +196,8 @@ $$A\oplus B=(A\cup B)-(A\cap B)$$
 ### Disjont 互斥
 
 $$A\cap B=\phi$$
+
++ A与B无交集
 
 ### Principle of inclusion-exclusion 容斥原理
 
@@ -218,7 +220,7 @@ $$|A|\cup|B|=|A|+|B|-|A\cap B|$$
 
 ## Membership Tables 成员表（近似于真值表）
 
-![12](img/CH02/12.jpeg)
+![pSFS9vq.jpg](https://s1.ax1x.com/2023/01/04/pSFS9vq.jpg)
 
 ### Ways to Prove Set Identities 集合恒等式的证明方法
 
@@ -226,30 +228,30 @@ $$|A|\cup|B|=|A|+|B|-|A\cap B|$$
 
 > **New and important**
 
-![](img/CH02/06.png)
+![pSizjUg.png](https://s1.ax1x.com/2023/01/04/pSizjUg.png)
 
 #### II. Use logical equivalences to prove equivalent set definitions
 
 > **Easy but tedious**
 
-![](img/CH02/07.png)
+![pSizXVS.png](https://s1.ax1x.com/2023/01/04/pSizXVS.png)
 
 #### III. Use a membership table
 
 > **Like truth tables**
 
-![](img/CH02/08.png)
+![pSizv5Q.png](https://s1.ax1x.com/2023/01/04/pSizv5Q.png)
 
 #### IV. Use previously proven identities
 
 > **Like ≡**
 
-![](img/CH02/09.png)
+![pSizLb8.png](https://s1.ax1x.com/2023/01/04/pSizLb8.png)
 
 ## Computer Representation of Set 集合的计算机表示
 
 + Assume that the universal set U is finite.
-+ Specify an arbitrary ordering of the elements of U, for instance a~1~, a~2~, ...,a~n~.
++ Specify an arbitrary ordering of the elements of U, for instance $a_1, a_2, ...,a_n$.
 + Represent a subset A of U with the bit string of length n, where the i-th bit in this string is 1 if $a_i\in A$ and is 0 if $a_i\notin A$
 + 说人话就是全集有几个，就有几位，子集的表示就是有的数字为1，没有的数字为0（看例子）
 
@@ -323,15 +325,16 @@ $$f(S)=\{f(s)|s\in S\}$$
 >
 > **Explaination**:
 >
-> For the first equivalent, just prove $$f(S+T)\subseteq f(S)+f(T)$$ and $$f(S)+f(T)\subseteq f(S+T)$$ using the method proof by cases
+> For the first equivalent, just prove $f(S+T)\subseteq f(S)+f(T)$ and $f(S)+f(T)\subseteq f(S+T)$ using the method proof by cases
 >
-> For the second one, itself is easy to prove, but the interesting part is how to give a counterexample to prove that $$f(S)\cap f(T)\subseteq f(S\cap T)$$ is wrong.
+> For the second one, itself is easy to prove, but the interesting part is how to give a counterexample to prove that $f(S)\cap f(T)\subseteq f(S\cap T)$ is wrong.
 >
-> This counterexample is that when f() is not one-to-one (this will be mentioned right below), the latter one can be larger than the previous one! (Specific example omitted)
+> This counterexample is that when f() is not one-to-one (this will be mentioned right below), the latter one can be larger than the previous one! 
+> Specific example:
+> $X=\{1,2\}, Y=\{0\}, f(1)=f(2)=0.$
+> $With \ 𝐴=\{1\}\  and \ B=\{2\}, we \ have\  𝑓(𝐴∩𝐵)=𝑓(∅)=∅\ ,𝑓(𝐴)∩𝑓(𝐵)=\{0\}∩\{0\}=\{0\}$
 
-
-
-A **monotonic**（**单调**） function f is either **monotonically (strictly) increasing** ($$\forall x\forall y(x<y\to f(x)<f(y))$$) or **monotonically (strictly) decreasing** (($$\forall x\forall y(x<y\to f(x)>f(y))$$))
+A **monotonic**（**单调**） function f is either **monotonically (strictly) increasing** ($\forall x\forall y(x<y\to f(x)<f(y))$) or **monotonically (strictly) decreasing** (($\forall x\forall y(x<y\to f(x)>f(y))$))
 
 ### Equal Function
 
@@ -343,12 +346,12 @@ A **monotonic**（**单调**） function f is either **monotonically (strictly) 
 
 + Let f be a function from A to B and let S be a subset of A. 
 + The image of S: $f(S) = \{t|∃s ∈ S(t = f(s))\}$.
-  + (the shorthand$ \{f(s)|s ∈ S\}$)
+  + (the shorthand $\{f(s)|s ∈ S\}$)
 
 > example
 >
 > Let $A = \{a,b,c,d,e\}$ and $B = \{1,2,3,4\}$ with $f(a) = 2,f(b) = 1,f(c) = 4,f(d) = 1, and \ f(e) = 1$.
-> The image of the subset $S = \{b,c,d\}$ is the set $ f(S) = \{1,4\}$.
+> The image of the subset $S = \{b,c,d\}$ is the set $f(S) = \{1,4\}$.
 
 
 
@@ -363,11 +366,9 @@ A function f is **one-to-one**（**一对一**） (denoted 1-1), or **injective*
 ### Onto Functions/Surjection 满射函数
 
 A function f from A to B is called **onto**（**映上**）, or **surjective**（**满射**） if
-
 $$
 \forall b(b\in B)\exists a (a\in A)(f(a)=b)
 $$
-
 > In short, **every b in B has a preimage**.
 
 ### One-to-one Correspondence Functions (Bijection)双射
@@ -378,7 +379,7 @@ The function f is a **one-to-one correspondence**（**一一对应**）, or a **
 
 ### Examples of Different Types of Correspondences
 
-![](img/CH02/10.png)
+![pSizzCj.png](https://s1.ax1x.com/2023/01/04/pSizzCj.png)
 
 > Suppose that f : A → B
 >
@@ -392,11 +393,9 @@ The function f is a **one-to-one correspondence**（**一一对应**）, or a **
 ### Inverse Functions 反函数
 
 Let f be a **one-to-one correspondence** from the set A to the set B, the **inverse function of f** is denoted by $$f^{-1}$$
-
 $$
 f^{-1}(y)=x  \iff f(x)=y
 $$
-
 > No inverse function exists unless f is a bijection
 >
 > Function f is **invertible**（**可逆的**）  iff  f is bijective
@@ -404,19 +403,17 @@ $$
 
 
 ### **Compositions of Functions** 复合函数
-
 $$
 (f\circ g(a))=f(g(a))
 $$
-
 > $f\circ g$ can’t be defined unless the range of g is a subset of the domain of f.
 
 
 
 ## The Graphs of Functions
 
-+ The **graph**（图） of the function f is the set of ordered pairs $$\{(a,b)|a∈A\wedge f(a)=b\}$$
-+ ![13](13.jpeg)
++ The **graph**（图） of the function f is the set of ordered pairs $\{(a,b)|a∈A\wedge f(a)=b\}$
++ ![pSFSp2n.jpg](https://s1.ax1x.com/2023/01/04/pSFSp2n.jpg)
 
 
 
@@ -434,7 +431,7 @@ $$\lfloor x\rfloor$$
 
 $$\lceil x\rceil$$
 
-![11](2-basic-structure/11.png)
+![pSFSS8s.png](https://s1.ax1x.com/2023/01/04/pSFSS8s.png)
 
 >  哪里有多出来的小边边向哪里取整
 
@@ -463,9 +460,9 @@ $$\lceil x\rceil$$
 
 + A **sequence** is a function from a subset of the set of intergers (usually either the set {0,1,2,…} or the set {1,2,3,…}) to a set S. 
 
-+ We use the notation **$$a_n$$** to denote the image of the image of the integer **n**. 
++ We use the notation **$a_n$** to denote the image of the image of the integer **n**. 
 
-+ We call $$a_n$$ a term of the sequence $$\{a_n\}$$.
++ We call $a_n$ a term of the sequence $\{a_n\}$.
 
 > **The order in a sequence matters!**
 
@@ -496,25 +493,20 @@ e.g. Fibonacci Sequence
  
 
 ## *Summations 求和
-
 $$
-\begin{equation*}
 \sum_{i=m}^na_i=\sum\nolimits_{i=m}^na_i=\sum\nolimits_{m≤i≤n}a_i=a_m+a_{m+1}+...+a_n
-\end{equation*}
 $$
 
 $$
 \sum_{s∈S}f(s)
 $$
-
 ### Some Useful Summation Formulae 求和公式
-
 $$
 \sum_{k=1}^nk^2=\frac{n(n+1)(2n+1)}{6}
 $$
 
 $$
-\sum_{k=1}^nk^3=\frac{n^2(n+1)^2}{4}
+\sum_{k=1}^nk^3=\frac{n^2(n+1)^2}{4}=(\frac{n(n+1)}2)^2=(1+2+3+...+n)^2
 $$
 
 $$
