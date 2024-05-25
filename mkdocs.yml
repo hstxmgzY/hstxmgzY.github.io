@@ -1,0 +1,96 @@
+site_name: hstxmgzYYYYYY
+nav:
+  - Home: "index.html"
+  - "about.md"
+  - IELTS:
+      - Writing:
+         - 说明: "ielts/writing/说明.md"
+         - Develop Your Idea: "ielts/writing/develop_your_idea.md"
+         - 比较利弊: "ielts/writing/Advantages_and_Disadvantage.md"
+         - Discuss Both Views: "ielts/writing/Discuss_both_views.md"
+         - 同不同意: "ielts/writing/同不同意.md"
+         - Report型: "ielts/writing/Causes_and_solution.md"
+         - 小作文语料: "ielts/writing/小作文语料.md"
+         - 小作文数据图: "ielts/writing/数据图.md"
+         - 小作文地图&流程图: "ielts/writing/流程图&地图.md"
+  - 刷题小记:
+      - 数据结构:
+         - 链表: "JF/datastructure/linklist.md"
+         - 图: "JF/datastructure/graph.md"
+      - 淑芬:
+         - OVERALL: "JF/淑芬/OVERALL.md"
+      - 机器学习:
+         - 绪论: "JF/机器学习/Chp0.md" 
+         - 模型评估与选择: "JF/机器学习/Chp2.md"
+      - SQL: 
+         - "JF/sql/SQL概述.md"
+         - "JF/sql/数据定义.md"
+         - "JF/sql/数据更新.md"
+         - "JF/sql/数据查询.md"
+      - "概率论与数理统计":
+         - "JF/概率论与数理统计/概率论.md"
+      - MySQL:
+         - "JF/mysql/配置&下载.md"
+      - 归档:
+         - "202404":
+           - "JF/归档/202404/20240423.md"
+           - "JF/归档/202404/20240424.md"
+         - "202405":
+           - "JF/归档/202405/202405.md"
+      
+  - Misc:
+      - problems: "Misc/hghgh1.md"
+
+theme:
+  name: material
+  language: en
+  palette:
+    primary: white
+    accent: red
+    scheme: preference
+  icon:
+    repo: fontawesome/brands/github-alt
+    admonition:
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/zap-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
+  features:
+  - navigation.tabs
+  - navigation.tabs.sticky
+  - search.suggest
+  - search.highlight
+  - search.share
+  font:
+    text: Noto Sans
+    code: Source Code Pro
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css

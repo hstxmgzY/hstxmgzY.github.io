@@ -1,0 +1,2853 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../sql/%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2/">
+      
+      
+        <link rel="next" href="../../mysql/%E9%85%8D%E7%BD%AE%26%E4%B8%8B%E8%BD%BD/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.11">
+    
+    
+      
+        <title>概率 - hstxmgzYYYYYY</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e359304.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M1 7.775V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 0 1 0 2.474l-5.026 5.026a1.75 1.75 0 0 1-2.474 0l-6.25-6.25A1.752 1.752 0 0 1 1 7.775Zm1.5 0c0 .066.026.13.073.177l6.25 6.25a.25.25 0 0 0 .354 0l5.025-5.025a.25.25 0 0 0 0-.354l-6.25-6.25a.25.25 0 0 0-.177-.073H2.75a.25.25 0 0 0-.25.25ZM6 5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M2.5 1.75v11.5c0 .138.112.25.25.25h3.17a.75.75 0 0 1 0 1.5H2.75A1.75 1.75 0 0 1 1 13.25V1.75C1 .784 1.784 0 2.75 0h8.5C12.216 0 13 .784 13 1.75v7.736a.75.75 0 0 1-1.5 0V1.75a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25Zm13.274 9.537v-.001l-4.557 4.45a.75.75 0 0 1-1.055-.008l-1.943-1.95a.75.75 0 0 1 1.062-1.058l1.419 1.425 4.026-3.932a.75.75 0 1 1 1.048 1.074ZM4.75 4h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM4 7.75A.75.75 0 0 1 4.75 7h2a.75.75 0 0 1 0 1.5h-2A.75.75 0 0 1 4 7.75Z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.499.75a.75.75 0 0 1 1.5 0v.996C5.9 2.903 6.793 3.65 7.662 4.376l.24.202c-.036-.694.055-1.422.426-2.163C9.1.873 10.794-.045 12.622.26 14.408.558 16 1.94 16 4.25c0 1.278-.954 2.575-2.44 2.734l.146.508.065.22c.203.701.412 1.455.476 2.226.142 1.707-.4 3.03-1.487 3.898C11.714 14.671 10.27 15 8.75 15h-6a.75.75 0 0 1 0-1.5h1.376a4.484 4.484 0 0 1-.563-1.191 3.835 3.835 0 0 1-.05-2.063 4.647 4.647 0 0 1-2.025-.293.75.75 0 0 1 .525-1.406c1.357.507 2.376-.006 2.698-.318l.009-.01a.747.747 0 0 1 1.06 0 .748.748 0 0 1-.012 1.074c-.912.92-.992 1.835-.768 2.586.221.74.745 1.337 1.196 1.621H8.75c1.343 0 2.398-.296 3.074-.836.635-.507 1.036-1.31.928-2.602-.05-.603-.216-1.224-.422-1.93l-.064-.221c-.12-.407-.246-.84-.353-1.29a2.425 2.425 0 0 1-.507-.441 3.075 3.075 0 0 1-.633-1.248.75.75 0 0 1 1.455-.364c.046.185.144.436.31.627.146.168.353.305.712.305.738 0 1.25-.615 1.25-1.25 0-1.47-.95-2.315-2.123-2.51-1.172-.196-2.227.387-2.706 1.345-.46.92-.27 1.774.019 3.062l.042.19a.884.884 0 0 1 .01.05c.348.443.666.949.94 1.553a.75.75 0 1 1-1.365.62c-.553-1.217-1.32-1.94-2.3-2.768L6.7 5.527c-.814-.68-1.75-1.462-2.692-2.619a3.737 3.737 0 0 0-1.023.88c-.406.495-.663 1.036-.722 1.508.116.122.306.21.591.239.388.038.797-.06 1.032-.19a.75.75 0 0 1 .728 1.31c-.515.287-1.23.439-1.906.373-.682-.067-1.473-.38-1.879-1.193L.75 5.677V5.5c0-.984.48-1.94 1.077-2.664.46-.559 1.05-1.055 1.673-1.353V.75Z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.92 6.085h.001a.749.749 0 1 1-1.342-.67c.169-.339.436-.701.849-.977C6.845 4.16 7.369 4 8 4a2.756 2.756 0 0 1 1.637.525c.503.377.863.965.863 1.725 0 .448-.115.83-.329 1.15-.205.307-.47.513-.692.662-.109.072-.22.138-.313.195l-.006.004a6.24 6.24 0 0 0-.26.16.952.952 0 0 0-.276.245.75.75 0 0 1-1.248-.832c.184-.264.42-.489.692-.661.103-.067.207-.132.313-.195l.007-.004c.1-.061.182-.11.258-.161a.969.969 0 0 0 .277-.245C8.96 6.514 9 6.427 9 6.25a.612.612 0 0 0-.262-.525A1.27 1.27 0 0 0 8 5.5c-.369 0-.595.09-.74.187a1.01 1.01 0 0 0-.34.398ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M2.344 2.343h-.001a8 8 0 0 1 11.314 11.314A8.002 8.002 0 0 1 .234 10.089a8 8 0 0 1 2.11-7.746Zm1.06 10.253a6.5 6.5 0 1 0 9.108-9.275 6.5 6.5 0 0 0-9.108 9.275ZM6.03 4.97 8 6.94l1.97-1.97a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734L9.06 8l1.97 1.97a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L8 9.06l-1.97 1.97a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L6.94 8 4.97 6.03a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018Z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M9.504.43a1.516 1.516 0 0 1 2.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.249 1.249 0 0 1-.871.354h-.302a1.25 1.25 0 0 1-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429Zm1.047 1.074L3.286 8.571A.25.25 0 0 0 3.462 9H6.75a.75.75 0 0 1 .694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0 0 12.538 7H9.25a.75.75 0 0 1-.683-1.06l2.008-4.418.003-.006a.036.036 0 0 0-.004-.009l-.006-.006-.008-.001c-.003 0-.006.002-.009.004Z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4.72.22a.75.75 0 0 1 1.06 0l1 .999a3.488 3.488 0 0 1 2.441 0l.999-1a.748.748 0 0 1 1.265.332.75.75 0 0 1-.205.729l-.775.776c.616.63.995 1.493.995 2.444v.327c0 .1-.009.197-.025.292.408.14.764.392 1.029.722l1.968-.787a.75.75 0 0 1 .556 1.392L13 7.258V9h2.25a.75.75 0 0 1 0 1.5H13v.5c0 .409-.049.806-.141 1.186l2.17.868a.75.75 0 0 1-.557 1.392l-2.184-.873A4.997 4.997 0 0 1 8 16a4.997 4.997 0 0 1-4.288-2.427l-2.183.873a.75.75 0 0 1-.558-1.392l2.17-.868A5.036 5.036 0 0 1 3 11v-.5H.75a.75.75 0 0 1 0-1.5H3V7.258L.971 6.446a.75.75 0 0 1 .558-1.392l1.967.787c.265-.33.62-.583 1.03-.722a1.677 1.677 0 0 1-.026-.292V4.5c0-.951.38-1.814.995-2.444L4.72 1.28a.75.75 0 0 1 0-1.06Zm.53 6.28a.75.75 0 0 0-.75.75V11a3.5 3.5 0 1 0 7 0V7.25a.75.75 0 0 0-.75-.75ZM6.173 5h3.654A.172.172 0 0 0 10 4.827V4.5a2 2 0 1 0-4 0v.327c0 .096.077.173.173.173Z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M5 5.782V2.5h-.25a.75.75 0 0 1 0-1.5h6.5a.75.75 0 0 1 0 1.5H11v3.282l3.666 5.76C15.619 13.04 14.543 15 12.767 15H3.233c-1.776 0-2.852-1.96-1.899-3.458Zm-2.4 6.565a.75.75 0 0 0 .633 1.153h9.534a.75.75 0 0 0 .633-1.153L12.225 10.5h-8.45ZM9.5 2.5h-3V6c0 .143-.04.283-.117.403L4.73 9h6.54L9.617 6.403A.746.746 0 0 1 9.5 6Z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M1.75 2.5h10.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5Zm4 5h8.5a.75.75 0 0 1 0 1.5h-8.5a.75.75 0 0 1 0-1.5Zm0 5h8.5a.75.75 0 0 1 0 1.5h-8.5a.75.75 0 0 1 0-1.5ZM2.5 7.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 1.5 0Z"/></svg>');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans";--md-code-font:"Source Code Pro"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="white" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="hstxmgzYYYYYY" class="md-header__button md-logo" aria-label="hstxmgzYYYYYY" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            hstxmgzYYYYYY
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              概率
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../index.md" class="md-tabs__link">
+        
+  
+    
+  
+  None
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ielts/writing/%E8%AF%B4%E6%98%8E/" class="md-tabs__link">
+          
+  
+  IELTS
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../datastructure/linklist/" class="md-tabs__link">
+          
+  
+  刷题小记
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Misc/hghgh1/" class="md-tabs__link">
+          
+  
+  Misc
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="hstxmgzYYYYYY" class="md-nav__button md-logo" aria-label="hstxmgzYYYYYY" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    hstxmgzYYYYYY
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    IELTS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            IELTS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Writing
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Writing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ielts/writing/%E8%AF%B4%E6%98%8E/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    说明
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ielts/writing/develop_your_idea/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Develop Your Idea
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ielts/writing/Advantages_and_Disadvantage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    比较利弊
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ielts/writing/Discuss_both_views/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Discuss Both Views
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ielts/writing/%E5%90%8C%E4%B8%8D%E5%90%8C%E6%84%8F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    同不同意
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ielts/writing/Causes_and_solution/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Report型
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ielts/writing/%E5%B0%8F%E4%BD%9C%E6%96%87%E8%AF%AD%E6%96%99/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    小作文语料
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ielts/writing/%E6%95%B0%E6%8D%AE%E5%9B%BE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    小作文数据图
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ielts/writing/%E6%B5%81%E7%A8%8B%E5%9B%BE%26%E5%9C%B0%E5%9B%BE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    小作文地图&流程图
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    刷题小记
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            刷题小记
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    数据结构
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            数据结构
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datastructure/linklist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    链表
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datastructure/graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    图
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    淑芬
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            淑芬
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%B7%91%E8%8A%AC/OVERALL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OVERALL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    机器学习
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            机器学习
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Chp0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    绪论
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Chp2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    模型评估与选择
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SQL
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            SQL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/SQL%E6%A6%82%E8%BF%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SQL概述
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数据定义
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/%E6%95%B0%E6%8D%AE%E6%9B%B4%E6%96%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数据更新
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sql/%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数据查询
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    概率论与数理统计
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            概率论与数理统计
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    概率
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    概率
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一章
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第一章">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      条件概率
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      乘法公式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      全概率公式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      贝叶斯公式(果-&gt;因)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      事件的独立性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      频率
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="频率">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      频率的性质
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      第二章
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第二章">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      随机变量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="随机变量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      分布函数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      离散型随机变量及其概率分布
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="离散型随机变量及其概率分布">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      定义（离散）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bernoulli-distribution-0-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      伯努利分布（Bernoulli Distribution）/ 0-1分布
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binomial-distributionxsim-bnp" class="md-nav__link">
+    <span class="md-ellipsis">
+      二项分布（Binomial Distribution）\(X\sim B(n,p)\)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#poisson-distributionxsim-pilambda" class="md-nav__link">
+    <span class="md-ellipsis">
+      泊松分布（Poisson Distribution）\(X\sim \pi(\lambda)\)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      二项分布用泊松分布近似
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geometric-distributionxsim-gp" class="md-nav__link">
+    <span class="md-ellipsis">
+      几何分布（Geometric Distribution）\(X\sim G(p)\)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      连续型随机变量及其概率密度
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="连续型随机变量及其概率密度">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uniform-distribution-x-sim-ua-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      均匀分布（Uniform Distribution） \(X \sim U(a, b)\)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="均匀分布（Uniform Distribution） \(X \sim U(a, b)\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      概率密度函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      分布函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expected-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      期望值（Expected Value）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#median" class="md-nav__link">
+    <span class="md-ellipsis">
+      中值（Median）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variance" class="md-nav__link">
+    <span class="md-ellipsis">
+      方差（Variance）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      等可能性
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normal-distribution-xsim-nmu-sigma2" class="md-nav__link">
+    <span class="md-ellipsis">
+      正态分布（Normal Distribution）  \(X\sim N(\mu, \sigma^2)\)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="正态分布（Normal Distribution） \(X\sim N(\mu, \sigma^2)\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      分布函数：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      期望值和方差：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      特性：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      标准正态分布
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exponential-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      指数分布（Exponential Distribution）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="指数分布（Exponential Distribution）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      概率密度函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      分布函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expected-value_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      期望值（Expected Value）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variance_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      方差（Variance）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memoryless-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      无记忆性（Memoryless Property）：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MySQL
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            MySQL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mysql/%E9%85%8D%E7%BD%AE%26%E4%B8%8B%E8%BD%BD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    在CentOS 7 安装MySQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    归档
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            归档
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7_1" id="__nav_3_7_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    202404
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            202404
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%BD%92%E6%A1%A3/202404/20240423/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20240423
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%BD%92%E6%A1%A3/202404/20240424/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20240424/25
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7_2" id="__nav_3_7_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    202405
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            202405
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%BD%92%E6%A1%A3/202405/202405/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    202405
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Misc
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Misc
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Misc/hghgh1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    problems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一章
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第一章">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      条件概率
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      乘法公式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      全概率公式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      贝叶斯公式(果-&gt;因)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      事件的独立性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      频率
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="频率">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      频率的性质
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      第二章
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第二章">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      随机变量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="随机变量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      分布函数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      离散型随机变量及其概率分布
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="离散型随机变量及其概率分布">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      定义（离散）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bernoulli-distribution-0-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      伯努利分布（Bernoulli Distribution）/ 0-1分布
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binomial-distributionxsim-bnp" class="md-nav__link">
+    <span class="md-ellipsis">
+      二项分布（Binomial Distribution）\(X\sim B(n,p)\)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#poisson-distributionxsim-pilambda" class="md-nav__link">
+    <span class="md-ellipsis">
+      泊松分布（Poisson Distribution）\(X\sim \pi(\lambda)\)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      二项分布用泊松分布近似
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geometric-distributionxsim-gp" class="md-nav__link">
+    <span class="md-ellipsis">
+      几何分布（Geometric Distribution）\(X\sim G(p)\)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      连续型随机变量及其概率密度
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="连续型随机变量及其概率密度">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uniform-distribution-x-sim-ua-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      均匀分布（Uniform Distribution） \(X \sim U(a, b)\)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="均匀分布（Uniform Distribution） \(X \sim U(a, b)\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      概率密度函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      分布函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expected-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      期望值（Expected Value）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#median" class="md-nav__link">
+    <span class="md-ellipsis">
+      中值（Median）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variance" class="md-nav__link">
+    <span class="md-ellipsis">
+      方差（Variance）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      等可能性
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normal-distribution-xsim-nmu-sigma2" class="md-nav__link">
+    <span class="md-ellipsis">
+      正态分布（Normal Distribution）  \(X\sim N(\mu, \sigma^2)\)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="正态分布（Normal Distribution） \(X\sim N(\mu, \sigma^2)\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      分布函数：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      期望值和方差：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      特性：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      标准正态分布
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exponential-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      指数分布（Exponential Distribution）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="指数分布（Exponential Distribution）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      概率密度函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      分布函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expected-value_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      期望值（Expected Value）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variance_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      方差（Variance）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memoryless-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      无记忆性（Memoryless Property）：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="_1">概率</h1>
+<h2 id="_2">第一章</h2>
+<h3 id="_3">条件概率</h3>
+<blockquote>
+<p>定义</p>
+<ul>
+<li><span class="arithmatex">\(\Omega\)</span> 样本空间 <span class="arithmatex">\(A,B\)</span>两个事件</li>
+<li><span class="arithmatex">\(P(B)&gt;0\)</span> ，在 <span class="arithmatex">\(B\)</span> 已经发生的条件下 <span class="arithmatex">\(A\)</span> 发生的概率</li>
+</ul>
+</blockquote>
+<div class="arithmatex">\[
+P(A|B) = \frac{P(AB)}{P(B)}
+\]</div>
+<h3 id="_4">乘法公式</h3>
+<div class="arithmatex">\[
+P(AB) = P(A|B)P(B)
+\]</div>
+<div class="arithmatex">\[
+P(AB) = P(B|A)P(A)
+\]</div>
+<h3 id="_5">全概率公式</h3>
+<blockquote>
+<p>定理</p>
+<ul>
+<li><span class="arithmatex">\(A_1,A_2, ..., A_n\)</span> 是 <span class="arithmatex">\(E\)</span> 的<strong>完备事件组</strong>（互不相容且并为 <span class="arithmatex">\(\Omega\)</span> ）</li>
+<li><span class="arithmatex">\(P(A_i)&gt;0\)</span></li>
+</ul>
+</blockquote>
+<div class="arithmatex">\[
+P(B) = \sum^{n}_{i=1}P(A_i)P(B|A_i)
+\]</div>
+<p><img alt="image-20240331122329556" src="../%E6%A6%82%E7%8E%87%E8%AE%BA.assets/image-20240331122329556.png" /></p>
+<blockquote>
+<p>什么时候用？</p>
+<ul>
+<li>已经知道全集（样本空间）可以分成n个子集（互不相容），而且划分的概率都是知道的（比如情况1是三分之一。。。），要求的东西的概率在这些子集之间。</li>
+<li>举个例子，有10台冰箱，有3台是次品，已经卖了两台，问再取一台是正品的概率。那这道题就可以考虑前两台中的情况（1正1次，2次，2正）顺序不重要——这些就是A，而B则是第三台是正品。</li>
+</ul>
+<div class="arithmatex">\[
+\begin{aligned}
+    P(B) &amp;= \sum^{n}_{i=1}P(A_i)P(B|A_i) \\
+    &amp;= P(A_1)P(B|A_1) + P(A_2)P(B|A_2)+P(A_3)p(B|A_3) \\
+    &amp;= \frac{C_{7}^{1}C_3^1}{C_{10}^2} \times \frac{6}{8} + \frac{C_3^2}{C_{10}^2} \times \frac{7}{8}+ \frac{C_{7}^{2}}{C_{10}^2} \times \frac{5}{8}
+\end{aligned}
+\]</div>
+</blockquote>
+<h3 id="-">贝叶斯公式(果-&gt;因)</h3>
+<blockquote>
+<p>定理</p>
+<ul>
+<li><span class="arithmatex">\(A_1,A_2, ..., A_n\)</span> 是 <span class="arithmatex">\(E\)</span> 的<strong>完备事件组</strong>（互不相容且并为 <span class="arithmatex">\(\Omega\)</span> ）</li>
+<li><span class="arithmatex">\(P(B)&gt;0\)</span> ，<span class="arithmatex">\(P(A_i)&gt;0\)</span></li>
+</ul>
+</blockquote>
+<div class="arithmatex">\[
+P(A_k|B) = \frac{P(A_kB)}{P(B)}=\frac{P(A_k)P(B|A_k)}{\sum^{n}_{i=1}P(A_i)P(B|A_i)}
+\]</div>
+<blockquote>
+<p>要让分子分母变得的差不多</p>
+<ul>
+<li>可以观察到，分子用乘法公式算得，分母用全概率公式算得</li>
+</ul>
+<p>什么时候用？</p>
+<ul>
+<li>已经知道结果，要求原因。</li>
+<li>比如说 有四个厂子生产东西，有正品也有次品，我们已经知道了不合格的产品的P和四个厂子的产率，现在需要问你这些不合格的产品中，是第四个厂子生产出来的概率？ </li>
+</ul>
+</blockquote>
+<h3 id="_6">事件的独立性</h3>
+<blockquote>
+<p>定义：</p>
+<ul>
+<li>A的概率不受B发生与否的影响</li>
+</ul>
+<div class="arithmatex">\[
+P(A|B) = P(A)
+\]</div>
+<p>定理：</p>
+<ul>
+<li><span class="arithmatex">\(P(A)&gt;0,P(B)&gt;0\)</span>
+</li>
+</ul>
+<div class="arithmatex">\[
+A,B 独立 \leftrightarrow P(AB)=P(A)P(B)
+\]</div>
+<ul>
+<li>若<span class="arithmatex">\(A,B\)</span> 独立，则 <span class="arithmatex">\(A\)</span> 与 <span class="arithmatex">\(\overline{B}\)</span> ，<span class="arithmatex">\(\overline{A}\)</span> 与 <span class="arithmatex">\(B\)</span> ， <span class="arithmatex">\(\overline{A}\)</span> 与 <span class="arithmatex">\(\overline{B}\)</span> 独立</li>
+<li><span class="arithmatex">\(P(A)=0\)</span> 或 <span class="arithmatex">\(P(A)=1\)</span> ，A与任何事件独立 </li>
+</ul>
+</blockquote>
+<h3 id="_7">频率</h3>
+<div class="arithmatex">\[
+f_n=\frac{n_A}{n}
+\]</div>
+<ul>
+<li>其中，<span class="arithmatex">\(n_A\)</span> 指的是随机事件A在试验中发生的次数，<span class="arithmatex">\(n\)</span>指的是试验总次数</li>
+</ul>
+<h4 id="_8">频率的性质</h4>
+<ol>
+<li><span class="arithmatex">\(P(A) = 1-P(\overline{A})\)</span></li>
+<li>当 <span class="arithmatex">\(A\supset B\)</span> 时，<span class="arithmatex">\(P(A) \ge P(B)\)</span></li>
+<li><span class="arithmatex">\(P(A \cup B)=P(A) + P(B)-P(AB)\)</span><ol>
+<li><span class="arithmatex">\(P(A \cup B \cup C) = P(A) + P(B) - P(AB) - P(BC) - P(AC) + P(ABC)\)</span></li>
+<li>其实就是偶数减，奇数加。</li>
+</ol>
+</li>
+</ol>
+<h2 id="_9">第二章</h2>
+<h3 id="_10">随机变量</h3>
+<p>在概率论和统计学中，随机变量是对<strong>随机现象结果的数学描述</strong>。换句话说，它是一个函数，将样本空间中的每个可能的结果映射到一个实数上。随机变量可以是离散的，也可以是连续的。</p>
+<ol>
+<li>
+<p><strong>离散随机变量</strong>：取有限个或可数无限个值的随机变量。例如，抛硬币的结果（正面或反面）、掷骰子的结果（1、2、3、4、5 或 6）、抽取一副扑克牌中一张牌的花色等。</p>
+</li>
+<li>
+<p><strong>连续随机变量</strong>：取值范围是一个或多个连续的实数区间的随机变量。例如，一个人的身高、一辆车的速度、一次测量的温度等。</p>
+</li>
+</ol>
+<p>当谈及随机变量时，通常用符号来表示。假设我们有一个样本空间 <span class="arithmatex">\(S\)</span>，其中包含所有可能的结果。一个随机变量 <span class="arithmatex">\(X\)</span> 是一个函数，将样本空间中的每个结果映射到实数上。通常用 <span class="arithmatex">\(X\)</span> 来表示随机变量，其可能的取值用 <span class="arithmatex">\(x\)</span> 表示。</p>
+<ul>
+<li>对于<strong>离散随机变量</strong>，我们可以表示为：</li>
+</ul>
+<div class="arithmatex">\[ X : S \rightarrow \mathbb{R} \]</div>
+<p>其中，<span class="arithmatex">\(X\)</span> 将样本空间中的每个结果 <span class="arithmatex">\(s \in S\)</span> 映射到一个实数上，即 <span class="arithmatex">\(X(s) = x\)</span>。</p>
+<ul>
+<li>对于<strong>连续随机变量</strong>，我们可以表示为：</li>
+</ul>
+<div class="arithmatex">\[ X : S \rightarrow \mathbb{R} \]</div>
+<p>同样，<span class="arithmatex">\(X\)</span> 将样本空间中的每个结果 <span class="arithmatex">\(s \in S\)</span> 映射到一个实数上。</p>
+<p>在实际问题中，我们经常关注随机变量的分布和性质。因此，我们可以使用<strong>概率分布函数</strong>来描述随机变量的可能取值及其对应的概率。不同的随机变量有不同的累积分布函数，常见的随机变量包括离散型随机变量和连续型随机变量，它们对应的<strong>累积分布函数</strong>分别为概率质量函数的<strong>累积</strong>和概率密度函数的<strong>积分</strong>。</p>
+<p>对于离散随机变量 <span class="arithmatex">\(X\)</span>，其 PMF （概率质量函数）可以表示为：</p>
+<div class="arithmatex">\[ P(X = x) \]</div>
+<p>表示随机变量 <span class="arithmatex">\(X\)</span> 取值为 <span class="arithmatex">\(x\)</span> 的概率。</p>
+<p>对于连续随机变量 <span class="arithmatex">\(X\)</span>，其 PDF （概率密度函数）可以表示为：</p>
+<div class="arithmatex">\[ f_X(x) \]</div>
+<p>表示随机变量 <span class="arithmatex">\(X\)</span> 取值在 <span class="arithmatex">\(x\)</span> 附近的概率密度。</p>
+<h4 id="_11">分布函数</h4>
+<p>概率分布函数是描述随机变量在给定点处取值的概率的函数。分布函数 <span class="arithmatex">\(F_X(x)\)</span> 定义为随机变量 <span class="arithmatex">\(X\)</span> 小于或等于 <span class="arithmatex">\(x\)</span> 的概率：</p>
+<div class="arithmatex">\[ F_X(x) = P(X \leq x) \]</div>
+<p>累积分布函数具有以下性质：</p>
+<ol>
+<li>
+<p>对于任意的实数 <span class="arithmatex">\(x\)</span>，概率分布函数的值都在区间 <span class="arithmatex">\([0, 1]\)</span> 内：<span class="arithmatex">\( 0 \leq F_X(x) \leq 1 \)</span>。</p>
+</li>
+<li>
+<p>随着 <span class="arithmatex">\(x\)</span> 的增加，概率分布函数<strong>单调不减</strong>：<span class="arithmatex">\( if\quad x_1&lt;x_2, then\quad F(x_1)\le F(x_2) \)</span>  。</p>
+</li>
+<li>
+<p>在 <span class="arithmatex">\(x\)</span> 趋于负无穷时，概率分布函数趋近于 0；在 <span class="arithmatex">\(x\)</span> 趋于正无穷时，概率分布函数趋近于 1。<strong>(用于求参数)</strong></p>
+</li>
+<li>
+<p>概率分布函数是<strong>右连续</strong>的，即对于任意的 <span class="arithmatex">\(x\)</span>，<span class="arithmatex">\(F_X(x)\)</span> 在 <span class="arithmatex">\(x\)</span> 处连续。（离散型 右连续，连续性 连续）</p>
+</li>
+</ol>
+<blockquote>
+<p>补充：连续 左连续 右连续</p>
+<p>在数学中，连续性是描述函数在某个点处的性质的概念。右连续、左连续和连续是指函数在该点处的取值与函数在该点的左侧和右侧的极限之间的关系。</p>
+<ol>
+<li>
+<p><strong>右连续</strong>（Right-continuous）：如果函数在某个点 <span class="arithmatex">\(x\)</span> 处的右极限等于函数在该点的值，那么该函数在点 <span class="arithmatex">\(x\)</span> 处是右连续的。具体来说，如果对于函数 <span class="arithmatex">\(f(x)\)</span> ，当 <span class="arithmatex">\(x \to c^+\)</span> 时，有 <span class="arithmatex">\(\lim_{x \to c^+} f(x) = f(c)\)</span>，则函数 <span class="arithmatex">\(f(x)\)</span> 在点 <span class="arithmatex">\(x = c\)</span> 处是右连续的。</p>
+</li>
+<li>
+<p><strong>左连续</strong>（Left-continuous）：如果函数在某个点 <span class="arithmatex">\(x\)</span> 处的左极限等于函数在该点的值，那么该函数在点 <span class="arithmatex">\(x\)</span> 处是左连续的。具体来说，如果对于函数 <span class="arithmatex">\(f(x)\)</span>，当 <span class="arithmatex">\(x \to c^-\)</span> 时，有 <span class="arithmatex">\(\lim_{x \to c^-} f(x) = f(c)\)</span>，则函数 <span class="arithmatex">\(f(x)\)</span> 在点 <span class="arithmatex">\(x = c\)</span> 处是左连续的。</p>
+</li>
+<li>
+<p><strong>连续</strong>（Continuous）：如果函数在某个点 <span class="arithmatex">\(x\)</span> 处既是右连续的又是左连续的，且函数在该点的值等于其左极限和右极限，那么该函数在点 <span class="arithmatex">\(x\)</span> 处是连续的。换句话说，如果函数 <span class="arithmatex">\(f(x)\)</span> 在点 <span class="arithmatex">\(x = c\)</span> 处既是右连续的又是左连续的，并且满足 <span class="arithmatex">\(\lim_{x \to c^+} f(x) = f(c)=\lim_{x \to c^-} f(x) = f(c)=\lim_{x \to c} f(x) = f(c)\)</span>，则函数 <span class="arithmatex">\(f(x)\)</span> 在点 <span class="arithmatex">\(x = c\)</span> 处是连续的。</p>
+</li>
+</ol>
+<p>在实数轴上，右连续、左连续和连续的概念帮助我们理解函数在某个点处的性质，特别是在讨论极限和函数的连续性时非常有用。</p>
+</blockquote>
+<p>概率分布函数可以用来计算随机变量 <span class="arithmatex">\(X\)</span> 在某个区间内的概率，具体为：</p>
+<div class="arithmatex">\[ P(a &lt; X \leq b) = F_X(b) - F_X(a) \]</div>
+<p>其中 <span class="arithmatex">\(a\)</span> 和 <span class="arithmatex">\(b\)</span> 是任意的实数，表示区间的上下界。</p>
+<h3 id="_12">离散型随机变量及其概率分布</h3>
+<h4 id="_13">定义<strong>（离散）</strong></h4>
+<ul>
+<li>取值可数的随机变量为<strong>离散量</strong></li>
+<li>离散型随机变量是指其可能取值为<strong>有限个</strong>或者<strong>可数无限个</strong>的随机变量。离散型随机变量的概率分布通常由概率质量函数（Probability Mass Function，PMF）来描述。</li>
+</ul>
+<p>概率质量函数 <span class="arithmatex">\(P(X = x)\)</span> 给出了随机变量 <span class="arithmatex">\(X\)</span> 取特定值 <span class="arithmatex">\(x\)</span> 的概率。它满足以下两个条件：</p>
+<ol>
+<li>对于所有可能的 <span class="arithmatex">\(x\)</span> 值，概率质量函数的值都是非负的：<span class="arithmatex">\(P(X = x) \geq 0\)</span>。</li>
+<li>所有可能的 <span class="arithmatex">\(x\)</span> 值的概率之和等于 1：<span class="arithmatex">\(\sum_{\text{all } x} P(X = x) = 1\)</span>。</li>
+</ol>
+<p>常见的离散型随机变量及其概率分布包括：</p>
+<h4 id="bernoulli-distribution-0-1"><strong>伯努利分布（Bernoulli Distribution）/ 0-1分布</strong></h4>
+<ul>
+<li>描述了<strong>只有两种可能结果</strong>的随机试验，如抛一次硬币的结果（正面或反面）。</li>
+<li>概率质量函数：<span class="arithmatex">\(P(X = k) = p^k (1-p)^{1-k}\)</span>，其中 <span class="arithmatex">\(k \in \{0, 1\}\)</span>，<span class="arithmatex">\(p\)</span> 表示成功的概率。</li>
+</ul>
+<h4 id="binomial-distributionxsim-bnp"><strong>二项分布（Binomial Distribution）</strong><span class="arithmatex">\(X\sim B(n,p)\)</span></h4>
+<ul>
+<li>描述了进行多次独立的伯努利试验（n重伯努利试验），并统计成功次数的分布。</li>
+<li>概率质量函数：<span class="arithmatex">\(P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}\)</span>，其中 <span class="arithmatex">\(k\)</span> 表示成功的次数，<span class="arithmatex">\(n\)</span> 表示试验次数，<span class="arithmatex">\(p\)</span> 表示单次试验中的成功概率。</li>
+</ul>
+<h4 id="poisson-distributionxsim-pilambda"><strong>泊松分布（Poisson Distribution）<span class="arithmatex">\(X\sim \pi(\lambda)\)</span></strong></h4>
+<ul>
+<li>描述了在一定时间或空间内随机事件发生的次数的分布。</li>
+<li>概率质量函数：<span class="arithmatex">\(P(X = k) = \frac{\lambda^k }{k!} e^{-\lambda}\)</span>，其中 <span class="arithmatex">\(k\)</span> 表示事件发生的次数，<span class="arithmatex">\(\lambda\)</span> 表示单位时间或单位空间内事件发生的平均次数。</li>
+<li>泊松分布通常用于描述低概率事件在一段时间或空间内发生的次数，比如电话呼叫数量、交通事故数量、客户到达数量等。</li>
+</ul>
+<p>下面通过一个例子来解释 <span class="arithmatex">\(\lambda\)</span> 的含义：</p>
+<p>假设某个停车场在一小时内平均发生车辆进入的次数为 5 辆。我们可以用泊松分布来描述这种现象。在这个例子中，每小时进入的车辆数就是随机变量 <span class="arithmatex">\(X\)</span>，而泊松分布的参数 <span class="arithmatex">\(\lambda\)</span> 就是 5，即 <span class="arithmatex">\(\lambda = 5\)</span>。</p>
+<p>现在，我们来计算在一小时内进入的车辆数符合泊松分布的概率。例如，我们想知道在这个停车场中，一小时内进入的车辆数为 3 辆的概率是多少。我们可以使用泊松分布的概率质量函数：</p>
+<div class="arithmatex">\[ P(X = 3) = \frac{5^3 e^{-5}}{3!} \approx 0.14037 \]</div>
+<h4 id="_14">二项分布用泊松分布近似</h4>
+<p>当二项分布中的试验次数 <span class="arithmatex">\(n\)</span> 很大，成功概率 <span class="arithmatex">\(p\)</span> 很小，但成功次数 <span class="arithmatex">\(np\)</span> 保持一定的大小时，可以使用泊松分布来近似描述二项分布。</p>
+<p>具体来说，当 <span class="arithmatex">\(n\)</span> 很大，<span class="arithmatex">\(p\)</span> 很小，且 (np) 适中时，二项分布 <span class="arithmatex">\(B(n, p)\)</span> 可以近似为参数 <span class="arithmatex">\(\lambda = np\)</span> 的泊松分布 <span class="arithmatex">\(P(\lambda)\)</span>。这是因为在这种情况下，二项分布的概率质量函数中的各项变得非常接近，而且随着 <span class="arithmatex">\(n\)</span> 的增大和 <span class="arithmatex">\(p\)</span> 的减小，二项分布的形状越来越类似于泊松分布。</p>
+<p>泊松分布的概率质量函数为：</p>
+<div class="arithmatex">\[ P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!} \]</div>
+<p>其中，<span class="arithmatex">\(k\)</span> 表示事件发生的次数，<span class="arithmatex">\(\lambda\)</span> 表示事件在单位时间或单位空间内的平均发生率。</p>
+<p>在使用泊松分布来近似二项分布时，我们有以下关系：</p>
+<div class="arithmatex">\[ \lambda = np \]</div>
+<p>这意味着泊松分布的参数 <span class="arithmatex">\(\lambda\)</span> 可以由二项分布的参数 <span class="arithmatex">\(n\)</span> 和 <span class="arithmatex">\(p\)</span> 来确定。在二项分布 <span class="arithmatex">\(B(n, p)\)</span> 中，如果 <span class="arithmatex">\(n\)</span> 很大，<span class="arithmatex">\(p\)</span> 很小时，<span class="arithmatex">\(np = \lambda\)</span> 会保持相对稳定的值。</p>
+<p>当 <span class="arithmatex">\(n\)</span> 很大且 <span class="arithmatex">\(p\)</span> 很小时，二项分布的概率质量函数中的各项变得非常接近的原因如下：</p>
+<ol>
+<li>
+<p><strong>期望值近似相等</strong>：在二项分布 <span class="arithmatex">\(B(n, p)\)</span> 中，其期望值为 <span class="arithmatex">\(np\)</span>。因此，当 <span class="arithmatex">\(n\)</span> 很大，<span class="arithmatex">\(p\)</span> 很小时，虽然每次试验成功的概率很小，但由于试验次数 <span class="arithmatex">\(n\)</span> 很大，<span class="arithmatex">\(np\)</span> 依然保持一定的大小。这意味着二项分布的期望值仍然比较稳定。而泊松分布的参数 <span class="arithmatex">\(\lambda\)</span> 也是由 <span class="arithmatex">\(np\)</span> 决定的，因此在这种情况下，二项分布的期望值与泊松分布的参数相近。</p>
+</li>
+<li>
+<p><strong>方差逐渐变小</strong>：二项分布的方差为 <span class="arithmatex">\(np(1-p)\)</span>，当 <span class="arithmatex">\(n\)</span> 很大，<span class="arithmatex">\(p\)</span> 很小时，<span class="arithmatex">\(np(1-p)\)</span> 也会逐渐变小。这意味着二项分布在这种情况下的波动性减小，使得其形状越来越接近于泊松分布，而泊松分布具有较小的方差。</p>
+</li>
+<li>
+<p><strong>大数定律</strong>：当 <span class="arithmatex">\(n\)</span> 很大时，根据大数定律，独立重复试验的平均值会趋于其期望值。即使每次试验成功的概率很小，但由于试验次数 <span class="arithmatex">\(n\)</span> 很大，成功的次数 <span class="arithmatex">\(np\)</span> 的分布也会趋近于其期望值，这就导致了二项分布的形状逐渐接近于泊松分布。</p>
+</li>
+</ol>
+<p>综上所述，当 <span class="arithmatex">\(n\)</span> 很大且 <span class="arithmatex">\(p\)</span> 很小时，二项分布的概率质量函数中的各项变得非常接近，这是因为在这种情况下，二项分布的期望值稳定，方差减小，同时符合大数定律，使得其分布形状越来越类似于泊松分布。</p>
+<h4 id="geometric-distributionxsim-gp"><strong>几何分布（Geometric Distribution）</strong><span class="arithmatex">\(X\sim G(p)\)</span></h4>
+<ul>
+<li>描述了在一系列独立的伯努利试验中，首次出现成功所需的试验次数。</li>
+<li>概率质量函数：<span class="arithmatex">\(P(X = k) = (1-p)^{k-1} p\)</span>，其中 <span class="arithmatex">\(k \geq 1\)</span>，<span class="arithmatex">\(p\)</span> 表示成功的概率。</li>
+</ul>
+<hr />
+<h3 id="_15">连续型随机变量及其概率密度</h3>
+<h4 id="_16">定义</h4>
+<ul>
+<li>非负可积 <span class="arithmatex">\(f(x)\)</span>， <span class="arithmatex">\(f(x)\ge 0\)</span>， <span class="arithmatex">\(a\le b\)</span> ，使得对任意实数 <span class="arithmatex">\(a, b\)</span> 都有<span class="arithmatex">\(P\{a&lt;x\le b\}=\int_a^b f(x)dx\)</span> ，就称 <span class="arithmatex">\(x\)</span> 为<strong>连续型随机变量</strong>，<span class="arithmatex">\(f(x)\)</span> 为 <span class="arithmatex">\(x\)</span> 的概率分布密度函数，简称概率密度。</li>
+</ul>
+<p>连续型随机变量的概率密度函数 <span class="arithmatex">\(f_X(x)\)</span> 满足以下两个条件：</p>
+<ol>
+<li>对于所有可能的 <span class="arithmatex">\(x\)</span> 值，概率密度函数的值都是非负的：<span class="arithmatex">\(f_X(x) \geq 0\)</span>。</li>
+<li>在整个实数轴上，概率密度函数的积分等于 1：<span class="arithmatex">\(\int_{-\infty}^{\infty} f_X(x) \, dx = 1\)</span>。</li>
+</ol>
+<p>因为<strong>连续型随机变量在单个点上的概率为零</strong>，我们通常使用概率密度函数来描述随机变量在<strong>某个区间</strong>内的概率。具体来说，概率密度函数 <span class="arithmatex">\(f_X(x)\)</span> 在区间 <span class="arithmatex">\((a, b)\)</span> 内的概率可以通过对概率密度函数在该区间上的积分来计算：</p>
+<div class="arithmatex">\[ P(a &lt; X &lt; b) = \int_{a}^{b} f_X(x) \, dx \]</div>
+<p>这个积分表示了随机变量 <span class="arithmatex">\(X\)</span> 在区间 <span class="arithmatex">\((a, b)\)</span> 内取值的概率。</p>
+<p>常见的连续型随机变量及其概率密度函数包括：</p>
+<h4 id="uniform-distribution-x-sim-ua-b"><strong>均匀分布（Uniform Distribution）</strong> <span class="arithmatex">\(X \sim U(a, b)\)</span></h4>
+<ul>
+<li>在某个区间 <span class="arithmatex">\((a, b)\)</span> 上概率密度函数为常数，表示该区间内任何一个子区间内取值的概率相同。</li>
+</ul>
+<p>均匀分布（Uniform Distribution）是一种简单的概率分布，其中随机变量在给定的区间内取值的概率是相等的。具体地说，如果随机变量 <span class="arithmatex">\(X\)</span> 在区间 <span class="arithmatex">\([a, b]\)</span> 内服从均匀分布，我们记作 <span class="arithmatex">\(X \sim U(a, b)\)</span>。</p>
+<h5 id="_17">概率密度函数</h5>
+<p>均匀分布的概率密度函数 <span class="arithmatex">\(f_X(x)\)</span> 定义在区间 <span class="arithmatex">\([a, b]\)</span> 上，并且在该区间内的取值是常数。因为在整个区间内的概率密度应该等于 1，我们可以将均匀分布的概率密度函数表示为：</p>
+<div class="arithmatex">\[
+f_X(x) = 
+\begin{cases} 
+\frac{1}{b - a}, &amp; \text{当 } a \leq x \leq b \\
+0, &amp; \text{其他情况}
+\end{cases}
+\]</div>
+<p>这里，<span class="arithmatex">\(a\)</span> 和 <span class="arithmatex">\(b\)</span> 是区间的下界和上界，<span class="arithmatex">\(b &gt; a\)</span>。概率密度函数 <span class="arithmatex">\(f_X(x)\)</span> 在区间 <span class="arithmatex">\([a, b]\)</span> 内是常数 <span class="arithmatex">\(\frac{1}{b - a}\)</span>，表示该区间内的任意子区间的概率是相等的。</p>
+<p><img alt="img" src="../%E6%A6%82%E7%8E%87%E8%AE%BA.assets/350px-Uniform_distribution_PDF.png" /></p>
+<h5 id="_18">分布函数</h5>
+<p>均匀分布的累积分布函数 <span class="arithmatex">\(F_X(x)\)</span> 可以通过对概率密度函数在给定点 <span class="arithmatex">\(x\)</span> 之前的区间上进行积分来得到，即：</p>
+<div class="arithmatex">\[
+F_X(x) = 
+\begin{cases} 
+0, &amp; \text{当 } x &lt; a \\
+\frac{x - a}{b - a}, &amp; \text{当 } a \leq x \leq b \\
+1, &amp; \text{当 } x &gt; b
+\end{cases}
+\]</div>
+<p>积分过程：</p>
+<div class="arithmatex">\[
+\int^x_{-\infty}f(t)dt=\int^a_{-\infty}f(t)dt + \int^x_af(t)dt= 0 + \int^x_a \frac{1}{b-a}dt
+\]</div>
+<p>这个累积分布函数描述了随机变量 <span class="arithmatex">\(X\)</span> 小于或等于 <span class="arithmatex">\(x\)</span> 的概率。在区间 <span class="arithmatex">\([a, b]\)</span> 内，累积分布函数的值以线性方式从 0 增加到 1，表示随机变量落在该区间内的概率随着 <span class="arithmatex">\(x\)</span> 的增加而增加。</p>
+<p><img alt="img" src="../%E6%A6%82%E7%8E%87%E8%AE%BA.assets/350px-Uniform_distribution_CDF.png" /></p>
+<h5 id="expected-value"><strong>期望值</strong>（Expected Value）</h5>
+<p>均匀分布在区间 <span class="arithmatex">\([a, b]\)</span> 内取值是等可能的，因此其期望值（也称为均值）等于区间的中点，即：</p>
+<div class="arithmatex">\[ E(X) = \frac{a + b}{2} \]</div>
+<h5 id="median"><strong>中值</strong>（Median）</h5>
+<p>由于均匀分布是对称的，区间的中点也是其中值。因此，均匀分布的中值也等于区间的中点，即：</p>
+<div class="arithmatex">\[ \text{Median} = \frac{a + b}{2} \]</div>
+<h5 id="variance"><strong>方差</strong>（Variance）</h5>
+<p>均匀分布的方差是衡量随机变量离其期望值的距离的平均值。对于均匀分布，我们可以使用方差的公式计算：</p>
+<div class="arithmatex">\[ \text{Var}(X) = \frac{(b - a)^2}{12} \]</div>
+<h5 id="_19"><strong>等可能性</strong></h5>
+<p>均匀分布的特点之一是，在给定区间内的任何子区间内随机变量取值的概率都是相等的。这意味着，任何区间的长度与该区间内随机变量取值的概率成正比。</p>
+<p>例如，对于区间 <span class="arithmatex">\([c, d]\)</span>，其长度为 <span class="arithmatex">\(d - c\)</span>，因此其概率为</p>
+<div class="arithmatex">\[
+P(c\le x \le d)=F(d)-F(c)=\int^d_c\frac{1}{b-a}=\frac{d-c}{b-a}
+\]</div>
+<p>其中 <span class="arithmatex">\(a \leq c &lt; d \leq b\)</span>。</p>
+<p>只与区间<span class="arithmatex">\([c,d]\)</span>的长度有关，而与它的位置无关</p>
+<h4 id="normal-distribution-xsim-nmu-sigma2"><strong>正态分布（Normal Distribution）</strong>  <span class="arithmatex">\(X\sim N(\mu, \sigma^2)\)</span></h4>
+<p><img alt="Probability density function for the Normal distribtion" src="../%E6%A6%82%E7%8E%87%E8%AE%BA.assets/325px-Normal_Distribution_PDF.svg.png" /></p>
+<h5 id="_20"><strong>定义</strong></h5>
+<p>正态分布的概率密度函数是一个钟形曲线，由两个参数完全描述：均值 <span class="arithmatex">\(\mu\)</span> 和标准差 <span class="arithmatex">\(\sigma\)</span>。其概率密度函数 <span class="arithmatex">\(f_X(x)\)</span> 表示为：</p>
+<div class="arithmatex">\[ f_X(x) = \frac{1}{ \sqrt{2\pi} \sigma} \exp\left(-\frac{(x - \mu)^2}{2\sigma^2}\right) \]</div>
+<p>其中，<span class="arithmatex">\(x\)</span> 是随机变量的取值，<span class="arithmatex">\(-\infty &lt; x&lt;\infty\)</span> ，<span class="arithmatex">\(\mu\)</span> 是分布的均值，<span class="arithmatex">\(\sigma\)</span> 是分布的标准差。</p>
+<h5 id="_21"><strong>分布函数</strong>：</h5>
+<p>正态分布的累积分布函数（CDF）表示为 <span class="arithmatex">\(F_X(x)\)</span>，它描述了随机变量 <span class="arithmatex">\(X\)</span> 小于或等于 <span class="arithmatex">\(x\)</span> 的概率。正态分布的累积分布函数没有解析表达式，通常使用数值计算或查找表来计算。</p>
+<h5 id="_22"><strong>期望值和方差</strong>：</h5>
+<ul>
+<li>
+<p>正态分布的期望值（均值）等于分布的均值参数 <span class="arithmatex">\(\mu\)</span>，即 <span class="arithmatex">\(E(X) = \mu\)</span>。</p>
+</li>
+<li>
+<p>方差等于分布的标准差参数 <span class="arithmatex">\(\sigma\)</span> 的平方，即 <span class="arithmatex">\(\text{Var}(X) = \sigma^2\)</span>。</p>
+</li>
+</ul>
+<h5 id="_23"><strong>特性</strong>：</h5>
+<ul>
+<li>正态分布是对称的，关于其均值 <span class="arithmatex">\(\mu\)</span> 对称。</li>
+<li>在 <span class="arithmatex">\(x = \mu\)</span> 处具有峰值，峰值的高度为 <span class="arithmatex">\(\frac{1}{\sigma \sqrt{2\pi}}\)</span>。</li>
+<li>正态分布的曲线在 <span class="arithmatex">\(x = \mu\)</span> 处拐点，曲线向两侧下降。</li>
+<li>标准正态分布是均值为 0，标准差为 1 的正态分布，称为 <span class="arithmatex">\(N(0, 1)\)</span> 分布。</li>
+</ul>
+<p>正态分布在许多领域中都有着广泛的应用，特别是在统计学和自然科学中。它的重要性在于中心极限定理，该定理指出，大量独立同分布的随机变量之和在趋近于无穷大时，近似服从正态分布。这使得正态分布成为许多统计推断方法的基础，例如假设检验、置信区间估计等。</p>
+<h5 id="_24">标准正态分布</h5>
+<p>标准正态分布是一种特殊的正态分布，具有均值为 0，标准差为 1 的特征。它的概率密度函数是正态分布概率密度函数的特例。</p>
+<ul>
+<li><strong>概率密度函数</strong>：
+  标准正态分布的概率密度函数 <span class="arithmatex">\(f_Z(z)\)</span> 定义为：</li>
+</ul>
+<div class="arithmatex">\[ f_Z(z) = \frac{1}{\sqrt{2\pi}} \exp\left(-\frac{z^2}{2}\right) \]</div>
+<p>其中，<span class="arithmatex">\(z\)</span> 是随机变量的取值，概率密度函数描述了随机变量取某个值的概率密度。</p>
+<ul>
+<li><strong>分布函数</strong>：
+  标准正态分布的累积分布函数 <span class="arithmatex">\(F_Z(z)\)</span> 表示随机变量 <span class="arithmatex">\(Z\)</span> 小于或等于 <span class="arithmatex">\(z\)</span> 的概率。标准正态分布的累积分布函数通常用符号 <span class="arithmatex">\(\Phi(z)\)</span> 表示：</li>
+</ul>
+<div class="arithmatex">\[ \Phi(z) = \int_{-\infty}^{z} \frac{1}{\sqrt{2\pi}} \exp\left(-\frac{t^2}{2}\right) \, dt \]</div>
+<p>标准正态分布的累积分布函数通常通过查找标准正态分布表或使用计算机软件进行计算。</p>
+<ul>
+<li>
+<p><strong>性质</strong>：</p>
+<ul>
+<li>
+<p>标准正态分布是对称的，其概率密度函数关于 <span class="arithmatex">\(z = 0\)</span> 对称。</p>
+</li>
+<li>
+<p>在 <span class="arithmatex">\(z = 0\)</span> 处具有峰值，峰值的高度为 <span class="arithmatex">\(\frac{1}{\sqrt{2\pi}}\)</span>。</p>
+</li>
+<li>
+<p>标准正态分布的曲线在 <span class="arithmatex">\(z = 0\)</span> 处拐点，曲线向两侧下降。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="exponential-distribution"><strong>指数分布（Exponential Distribution）</strong></h4>
+<ul>
+<li>描述了独立随机事件发生的时间间隔的概率分布，具有单峰右偏的形状。</li>
+<li>指数分布可以用来建模<strong>平均发生率恒定、连续、独立</strong>的事件发生的间隔，比如旅客进入机场的时间间隔、电话打进客服中心的时间间隔、机器的寿命等。</li>
+</ul>
+<p>指数分布（Exponential Distribution）是描述独立随机事件发生时间间隔的概率分布。它常用于描述连续时间下<strong>等待第一个事件发生</strong>的时间，或者是连续时间下两个事件之间的时间间隔。指数分布是一个重要的连续概率分布，具有单峰右偏的形状。</p>
+<h5 id="_25">概率密度函数</h5>
+<ul>
+<li>如果随机变量 <span class="arithmatex">\(X\)</span> 的概率密度函数 <span class="arithmatex">\(f_X(x)\)</span> 在 <span class="arithmatex">\(x\)</span> 处为 <span class="arithmatex">\(x \geq 0\)</span> 的指数函数形式，则称随机变量 <span class="arithmatex">\(X\)</span> 服从参数为 <span class="arithmatex">\(\lambda &gt; 0\)</span> 的指数分布，记作 <span class="arithmatex">\(X \sim \text{Exp}(\lambda)\)</span>，其概率密度函数为：</li>
+</ul>
+<div class="arithmatex">\[ f_X(x) = 
+\begin{cases} 
+\lambda e^{-\lambda x}, &amp; \text{当 } x \geq 0 \\
+0, &amp; \text{其他情况}
+\end{cases}
+\]</div>
+<p>其中，<span class="arithmatex">\(\lambda &gt; 0\)</span> 是指数分布的参数，称为速率参数，表示单位时间内事件发生的平均次数。</p>
+<p>指数分布的概率密度函数具有以下性质：</p>
+<ol>
+<li>对于所有 <span class="arithmatex">\(x \geq 0\)</span>，概率密度函数的值都是非负的：<span class="arithmatex">\(f_X(x) \geq 0\)</span>。</li>
+<li>在整个实数轴上，概率密度函数的积分等于 1：<span class="arithmatex">\(\int_{0}^{\infty} \lambda e^{-\lambda x} \, dx = 1\)</span>。</li>
+</ol>
+<p><img alt="机率密度函数" src="../%E6%A6%82%E7%8E%87%E8%AE%BA.assets/325px-Exponential_distribution_pdf.png" /></p>
+<h5 id="_26">分布函数</h5>
+<p>指数分布的累积分布函数 <span class="arithmatex">\(F_X(x)\)</span> 定义为随机变量 <span class="arithmatex">\(X\)</span> 小于或等于 <span class="arithmatex">\(x\)</span> 的概率：</p>
+<div class="arithmatex">\[ F_X(x) = P(X \leq x) = \int_{0}^{x} \lambda e^{-\lambda t} \, dt \]</div>
+<p>将概率密度函数积分得到的累积分布函数为：</p>
+<div class="arithmatex">\[ F_X(x) = 
+\begin{cases} 
+1 - e^{-\lambda x}, &amp; \text{当 } x \geq 0 \\
+0, &amp; \text{当 } x &lt; 0
+\end{cases}
+\]</div>
+<p>指数分布的累积分布函数具有以下性质：</p>
+<ol>
+<li>当 <span class="arithmatex">\(x \geq 0\)</span> 时，累积分布函数 <span class="arithmatex">\(F_X(x)\)</span> 的值在区间 <span class="arithmatex">\((0, 1)\)</span> 内，且随着 <span class="arithmatex">\(x\)</span> 的增加而单调递增。</li>
+<li>当 <span class="arithmatex">\(x &lt; 0\)</span> 时，累积分布函数的值为 0。</li>
+</ol>
+<p><img alt="累积分配函数" src="../%E6%A6%82%E7%8E%87%E8%AE%BA.assets/325px-Exponential_distribution_cdf.png" /></p>
+<h5 id="expected-value_1"><strong>期望值</strong>（Expected Value）</h5>
+<p>指数分布的期望值（也称为均值）等于其参数的倒数，即：</p>
+<div class="arithmatex">\[ E(X) = \frac{1}{\lambda} \]</div>
+<p>这意味着，事件发生的平均时间间隔为参数的倒数。</p>
+<h5 id="variance_1"><strong>方差</strong>（Variance）</h5>
+<p>指数分布的方差等于参数的倒数的平方，即：</p>
+<div class="arithmatex">\[ \text{Var}(X) = \frac{1}{\lambda^2} \]</div>
+<p>方差描述了随机变量离其期望值的平均距离，因此指数分布的方差可以理解为事件发生时间间隔的波动程度。</p>
+<h5 id="memoryless-property"><strong>无记忆性</strong>（Memoryless Property）：</h5>
+<p>指数分布具有无记忆性，这意味着在给定事件尚未发生的情况下，已经等待了一段时间，那么<strong>剩余的等待时间与之前等待的时间无关</strong>。</p>
+<p>具体来说，如果 <span class="arithmatex">\(X\)</span> 服从指数分布 <span class="arithmatex">\(X \sim \text{Exp}(\lambda)\)</span>，那么对于任意 <span class="arithmatex">\(s, t &gt; 0\)</span>，有：</p>
+<div class="arithmatex">\[ P(X &gt; s + t | X &gt; s) = P(X &gt; t) \]</div>
+<p>这个性质表示，已经等待了一段时间 <span class="arithmatex">\(s\)</span> 之后，再等待一段时间 <span class="arithmatex">\(t\)</span> 直到事件发生的概率，与开始等待的时间点无关。这种无记忆性的性质在实际应用中具有重要意义，例如在可靠性工程中，用于描述设备故障发生的时间间隔。</p>
+<h2 id="_27">参考</h2>
+<ul>
+<li>维基百科</li>
+<li><a href="https://zh.wikipedia.org/wiki/%E6%8C%87%E6%95%B0%E5%88%86%E5%B8%83">指数分布</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83">正态分布</a></li>
+<li>CHATGPT-3.5</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
