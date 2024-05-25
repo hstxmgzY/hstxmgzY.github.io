@@ -182,3 +182,5 @@ $$
 ## 参考文章
 
 [CSDN【机器学习】浅谈 归纳偏置 (Inductive Bias)](https://blog.csdn.net/qq_39478403/article/details/121107057)
+
+**[Machine-learning-learning-notes](https://github.com/Vay-keen/Machine-learning-learning-notes)**
