@@ -4,7 +4,8 @@
 
 ### **1.1 机器学习的定义**
 
-> 人的“经验”对应计算机中的“数据”，让**计算机来学习这些经验数据**，生成一个**算法模型**，在面对**新**的情况中，计算机便能作出有效的判断，这便是机器学习。
+??? note "note" 
+    人的“经验”对应计算机中的“数据”，让**计算机来学习这些经验数据**，生成一个**算法模型**，在面对**新**的情况中，计算机便能作出有效的判断，这便是机器学习。
 
 另一本经典教材的作者Mitchell给出了一个形式化的定义，假设：
 
@@ -182,5 +183,3 @@ $$
 ## 参考文章
 
 [CSDN【机器学习】浅谈 归纳偏置 (Inductive Bias)](https://blog.csdn.net/qq_39478403/article/details/121107057)
-
-**[Machine-learning-learning-notes](https://github.com/Vay-keen/Machine-learning-learning-notes)**

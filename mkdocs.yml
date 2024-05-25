@@ -1,4 +1,6 @@
+repo_url: https://github.com/hstxmgzY/hstxmgzY.github.io
 site_name: hstxmgzYYYYYY
+
 nav:
   - Home: "index.html"
   - "about.md"
@@ -37,18 +39,18 @@ nav:
            - "JF/归档/202404/20240424.md"
          - "202405":
            - "JF/归档/202405/202405.md"
-      
   - Misc:
       - problems: "Misc/hghgh1.md"
 
 theme:
   name: material
+  custom_dir: overrides/
   language: en
+  favicon: WebIcon.svg
   palette:
     primary: white
     accent: red
     scheme: preference
-  icon:
     repo: fontawesome/brands/github-alt
     admonition:
       note: octicons/tag-16
@@ -64,14 +66,25 @@ theme:
       example: octicons/beaker-16
       quote: octicons/quote-16
   features:
-  - navigation.tabs
-  - navigation.tabs.sticky
-  - search.suggest
-  - search.highlight
-  - search.share
+    - navigation.path
+    - navigation.tabs
+    - search.suggest
+    - search.share
+    - content.code.select
+    - content.code.copy
+    - content.tabs.link
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.footer
+    - search.highlight
   font:
     text: Noto Sans
     code: Source Code Pro
+  icon:
+    repo: repo_icon
+    logo: WebIcon
+
+  
 markdown_extensions:
   - attr_list
   - md_in_html
@@ -86,6 +99,17 @@ markdown_extensions:
   - pymdownx.superfences
   - admonition
   - pymdownx.details
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
 
 extra_javascript:
   - javascripts/mathjax.js
@@ -94,3 +118,12 @@ extra_javascript:
 
 extra_css:
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
+
+copyright: "Copyright &copy Ywx"
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/hstxmgzY/hstxmgzY.github.io
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:gooeyerwz@gmail.com
