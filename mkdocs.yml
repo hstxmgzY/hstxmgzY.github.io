@@ -45,6 +45,7 @@ nav:
            - "JF/归档/202405/202405.md"
   - Misc:
       - problems: "Misc/hghgh1.md"
+      - Git 修改提交的邮箱或用户名: "Misc/chage_commitinfo.md"
   - 大三下复习:
       - 备注: "复习/index.md"
       - 云计算技术: "复习/1.md"
