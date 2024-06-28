@@ -46,10 +46,16 @@ nav:
   - Misc:
       - problems: "Misc/hghgh1.md"
       - Git 修改提交的邮箱或用户名: "Misc/chage_commitinfo.md"
-  - 大三下复习:
-      - 备注: "复习/index.md"
-      - 云计算技术: "复习/1.md"
-      - 编译原理: "复习/byyl.md"
+  - 大学学习:
+      - 备注: "review/index.md"
+      - 大三下:
+         - 云计算技术:
+           - "review/Grade3_2/cloudcp/1.md"
+           - "review/Grade3_2/cloudcp/Cloud_Computing.md"
+         - 编译原理: "review/Grade3_2/lex/byyl.md"
+         - 信息安全技术:
+           - 复习: "review/Grade3_2/InfoSec/复习.md"
+           - 考试: "review/Grade3_2/InfoSec/test.md"
 
 theme:
   name: material
